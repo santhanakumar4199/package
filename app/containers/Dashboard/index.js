@@ -9,16 +9,21 @@ import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
-import makeSelectDashboard from './selectors';
+import makeSelectDashboard,{makeSelectdailerVal} from './selectors';
 import messages from './messages';
 import { take, call, put, select, cancel, takeLatest } from 'redux-saga/effects';
-import { defaultAction ,mobileNumber } from './actions';
-import { makeSelectLogin,makeSelectLocationState } from 'containers/Login/selectors';
-import defaultSagaD from './selectors';
-import {Label,Input,Badge,Block,Button,Caption,Heading,HorizontalRule,Accordian
-  ,PostForm,Media,SimpleTabPannel,Dialer,GenericPage,Bundle,
-StyledGrids,List,ListItem,
-StyledBackGround} from 'components';
+import { defaultAction ,mobileNumber,getDailerVal } from './actions';
+import { makeSelectLogin,makeSelectLocationState,makeSelectUserData } from 'containers/Login/selectors';
+import {Img,List,ListItem,Item,StyledBackground,Label,Table,TableRow,TableCell,Input,Dialer,Badge,Bundle,Block,Button,Caption,Heading
+  ,HorizontalRule,StyledAlert,StyledSections,TextLinks,StyledButton,StyledBlock,StyledGrids,StyledTiles
+  ,StyledSlider,StyledBubble,Link,Chevrons,Device,LogoImage,
+  EqualRows,StyledLink,Page,Bubble,Spring,Accordian,Sidebar,Carousel} from 'components';
+import BgImage from './hello-flower.jpg';
+
+import { css } from 'styled-components';
+
+
+
 
 export class Dashboard extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
@@ -31,23 +36,39 @@ export class Dashboard extends React.PureComponent { // eslint-disable-line reac
   }
 
   componentWillMount(){
-    //this.props.accorChange();
-    console.log("componentWillMount");
+    const test = this.props.handleSubmit();
+    console.log("getuserCheck5ntest",test);
   }
 
   componentDidMount(){
-    defaultAction(false);
-    console.log("getuserCheck5ntest");
+    const dailerVal ={
+      dailerVal1:80,
+      dailerVal2:230,
+      dailerVal3:360,
+    };
+    setTimeout( () => {
+     this.props.dailerValue(dailerVal)
+     console.log("setTimeout");
+  },3000);
   }
-
+ 
   render() {
-    console.log("this.propsthis.props",this.props);
-    const panCen = {margin: "auto",width:"560px","background-color":"white","box-shadow": "1px 1px 7px 4px #d6d6d6",height: "360px"}
+
+    console.log("this.props.dailerVal.dailerVal1",this.props.dailerVal.dailerVal1);
+
+    const panCen = css `margin: "auto",width:"560px","background-color":"white","box-shadow": "1px 1px 7px 4px #d6d6d6",height: "360px"`
     const alginChart = {"margin-left":"100px"}
+    const Listcolor = {"color":"#eee"}
     const lblfont = {"font-size":"24px"}
     const divback = {"background-color": "#eee","margin-top": "8px","border-radius":"6px"}
-    const divbackunder ={"width":"80%","margin":"auto"}
+    const divbackunder = {"background-color": "#eee","margin-top": "8px","border-radius":"6px","margin-top":"30%"}
     const AccordianContainer = ({accorChange,props}) => <Accordian accorChange {...props}/>
+    const bubblestyleone ={ "marginTop":"0","fontSize":"28px","marginBottom":"0","color":"#fff"};
+    const bubblestyletwo ={ "color":"#CCC","display":"block","marginBottom":"10px"};
+    const Mybutton = {"marginRight":"20px","cursor":"pointer", "backgroundColor":"#cacaca"};
+    const BlockInline = {"padding-left":"20px","width": "75%","display":"inline-block"}; 
+    const breadNew = {"background-color":"rgba(0,0,0,.6)","color":"#FFF","position":"relative"}; 
+    const buttonStyle = {"border": "1px solid transparent", "font-size": "20px", "padding": "11px 37px", "text-align": "center"}
     const comment = {
                       arrow: '',
                       text: 'I hope you enjoy learning React!',
@@ -58,30 +79,59 @@ export class Dashboard extends React.PureComponent { // eslint-disable-line reac
                     };
 
     return (
-      <GenericPage>
-      <Block style={divbackunder}>
-        <Accordian myDashProp={this.props} />
-        <Media/>
-        <SimpleTabPannel/>
-        <Dialer/>
-        <Dialer/>
-        <Dialer/>
-        <Heading level={3}>test</Heading>        
+      <Page>
+      
+            <StyledBackground BgImageURL={BgImage}>
+              <Carousel>
+                <Bubble/>
+                <Bubble/>
+                <Bubble/>
+              </Carousel>
+              
+              
+
+            </StyledBackground> 
+            
+           <Block style={breadNew}>
+            <StyledSections sectionType="bread">
+                <List ordered={true} style ={Listcolor}>
+                  <TextLinks linkType="linkbody" children="Home" href="https://www.google.com"></TextLinks>
+                </List>
+                <List ordered={true} style ={Listcolor}>
+                >
+                </List>
+                  <List ordered= {true} style ={Listcolor}>
+                  <TextLinks   children="My Vodafone"></TextLinks>
+                </List></StyledSections>
+            </Block> 
+            
+    
+<Block Style ={{"backgroundColor":"#EBEBEB"}}>
+          <Sidebar/>
+  <Block style={BlockInline}>
+   <Heading level ={1} align = {'center'}>Alice's phone</Heading>
+      <Block style ={{"margin": "50px auto 0px"}}>
+        <Dialer val={this.props.dailerVal.dailerVal1 ? this.props.dailerVal.dailerVal1 :360} />
+        <Dialer val={this.props.dailerVal.dailerVal2 ? this.props.dailerVal.dailerVal2 :360} />
+        <Dialer val={this.props.dailerVal.dailerVal3 ? this.props.dailerVal.dailerVal3 :360} />
+    </Block>
+    <Block>
+        <Button style ={{"width":"20%"}} palette={'danger'} font={'primary'}>Buy more data</Button> 
+        <Heading level={3} style={{"margin-left":"109px","vertical-align":"middle"}}><br></br><Heading level={4} style={{"font-weight":"lighter"}}></Heading></Heading>
+        
       </Block>
-      <Bundle>
-  <StyledGrids gridType={'gutter'} gridText={'this is a left gutter'} palette ={'white'}>Popular</StyledGrids>
-  <StyledGrids gridType={'leftgutter'} gridText={'this is a left gutter'} palette ={'white'}>10GB</StyledGrids>
-    <Heading level ={5} align = {'start'} palette ={'success'} palette ={'white'}>Heading1</Heading>
-  <List>
-    <ListItem>UK Data : 5GB for a month</ListItem>
-    <ListItem>US Data : Unlimited Data for month</ListItem>
-    <ListItem>Europe Data : Paid data please check the tempting offers</ListItem>
-    <ListItem>Asia Data : 1GB per day for 28 days</ListItem>
-  </List>
-  <Button type ={'secondary'}>Click me</Button>
-  </Bundle>
-  <StyledBackGround/>
-      </GenericPage>
+    </Block>   
+    
+   <Block Style ={{"backgroundColor":"#EBEBEB"}}>
+      <Block style={BlockInline}>
+        <Block style={{"margin-right":"30px"}}>
+          <Accordian myDashProp={this.props} >
+          </Accordian>
+        </Block>
+        </Block>
+    </Block>
+  </Block>
+        </Page>
     );
   }
 }
@@ -90,24 +140,33 @@ Dashboard.propTypes = {
   dispatch: PropTypes.func.isRequired,
   handleSubmit:PropTypes.func.isRequired,
   accorChange:PropTypes.func.isRequired,
+  DailerVal:PropTypes.number.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({
   Dashboard: makeSelectDashboard(),
+  dailerVal:makeSelectdailerVal(),
+  UserData:makeSelectUserData(),
+
 
 });
 
-function  mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch) {
   return {
     dispatch,
     handleSubmit: (evt) => {
-     console.log("testtesttest");
+     const  test =  dispatch(defaultAction());
+     console.log("testtesttest",test);
+    },
+     dailerValue:(dailerVal)=>{
+      const  dailVal = dispatch(getDailerVal(dailerVal));
+      console.log("props.Dashboard",dailVal);
     },
     accorChange:(props)=>{
       var aa = props.Dashboard ? props.Dashboard :false ;
       const  test = dispatch(defaultAction(!aa));
       console.log("props.Dashboard",props.Dashboard);
-    }
+    },
 
   };
 }

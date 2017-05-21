@@ -1,0 +1,424 @@
+
+@import "partials/_color";
+@import "partials/_layout";
+
+.button{
+  min-width:100px;
+  padding:10px 15px;
+  text-align:center;
+}
+
+.button>a,.button>a:active,.button>a:visited,.button>a:hover,.button>a:focus {
+  text-decoration:none;
+  color:white;
+}
+
+
+.button.disabled.submit{
+  background-color:$color-def-blue-disabled;
+  color:$color-white-semi;
+}
+
+.component{
+  height: 50px;
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.50);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.50);
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.50);
+  background-color:$color-white;
+}
+
+.input-margin{
+  margin-top: 13px;  
+}
+
+.component-empty{
+  height: 52px;
+}
+
+.component-label{
+  padding: 0 10px;
+  height: 50px;
+  color: #fff;
+}
+
+.comp-divider{
+   border-left: solid 1px $color-def-grey-selectfield-label;
+}
+.component-input{
+
+}
+.component-input-date{
+  position: static;
+  z-index: 0;
+}
+
+.component-input input{
+  height: 46px;
+  border: none;
+  padding: 0 10px;
+  background:none;
+  background-color:transparent;
+  color:$color-def-grey-text;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.component-input input:focus{
+  outline:none;
+}
+
+.component-select select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  height: 50px;
+  border: none;
+  padding: 0 10px;
+  border-radius: 0;
+}
+
+.droparrow{
+  background-image:url(../images/DropdownArrow.svg) !important;
+  background-position: 95% 13px !important;
+  background-repeat:no-repeat !important;
+}
+
+.comp-wrapper{
+  position: relative;
+}
+.comp-wrapper > label{
+  position: absolute;
+  z-index: 1;
+}
+
+
+.input-container{
+  position: relative;
+  top: auto;
+  width: 100%;
+}
+
+
+body.ltr-body .input-container{
+  left: auto;
+}
+
+
+.input-container>label {
+  position: absolute;
+  z-index: 1;
+  color: #999;
+  white-space: nowrap;
+  cursor: text;
+  transition:all .2s ease;
+  top:20px;
+  font-weight:normal;
+  left: 2px;
+}
+
+body.ltr-body .input-container>label{
+  padding-left: 8px;
+}
+
+.moveup>label{
+  font-size:10px;
+   top: 10px;
+   color: rgba(60, 148, 214, 0.91);
+   left: 2px;
+}
+
+
+.prod-label{
+  width: 100%;
+  height: 45px;
+  border-radius: 20px;
+  color: $color-def-grey-text;
+  font-weight: bold;
+}
+
+
+
+
+.prod-icon-container{
+  width: 60px;
+  height: 60px;
+  position: relative;
+}
+
+.prod-icon,.prod-check{
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  background-color:$color-def-grey-text;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.prod-check.checked{
+  background: url(../images/tick.svg) no-repeat center;
+    background-size: 50%;
+    background-color: $color-white-almost;
+    border: solid 3px $color-def-blue-button;
+    z-index: 3;
+    position: relative;
+    
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInY;
+    animation-name: flipInY;
+    -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.bar-orange.marker{
+  height:30px;
+}
+
+
+
+body.ltr-body .prod-label{
+  margin-left: -55px;
+  padding-left: 63px;
+}
+
+.info-icon{
+  -webkit-mask-image: url(../images/info.svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-image: url(../images/info.svg);
+  mask-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  display: block;
+  background-color: #ff9800;
+  -webkit-mask-size:80%;
+  -webkit-mask-position: center;
+  float: right;
+}
+
+.info-alt-icon{
+  margin-top: -47px;
+  margin-right: 53px;
+  mask-image: url('../images/infoType 2.svg');
+  mask-repeat: no-repeat;
+  -webkit-mask-image: url('../images/infoType 2.svg');
+  -webkit-mask-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  display: block;
+  background-color: #fff;
+  -webkit-mask-size:80%;
+  -webkit-mask-position: center;
+  float: right;
+}
+
+.home-icon{
+  margin-top: -47px;
+  margin-right: 53px;
+  mask-image: url('../images/Homeicon.svg');
+  mask-repeat: no-repeat;
+  -webkit-mask-image: url('../images/Homeicon.svg');
+  -webkit-mask-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  display: block;
+  background-color: #fff;
+  -webkit-mask-size:80%;
+  -webkit-mask-position: center;
+  float: right;
+}
+
+body.ltr-body .info-icon{
+  margin-right: 3px;
+}
+
+
+.icon-cc{
+  background-image:url(../images/CreditCard.svg);  
+}
+.icon-ca{
+  background-image:url(../images/CurrentAccount.svg);  
+}
+.icon-sa{
+  background-image:url(../images/SavingAccount.svg);  
+}
+.icon-pl{
+  background-image:url(../images/otheriCons.svg);  
+}
+.icon-hl{
+  background-image:url(../images/otheriCons.svg);  
+}
+.icon-al{
+  background-image:url(../images/otheriCons.svg);  
+}
+.icon-fd{
+  background-image:url(../images/otheriCons.svg);  
+}
+.icon-ro{
+  background-image:url(../images/otheriCons.svg);  
+}
+.icon-mm{
+  background-image:url(../images/otheriCons.svg);  
+}
+
+
+/**** progress bar *****/
+
+.progress-point{
+  background-color: rgba(255,255,255,0.5);
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+   z-index: 1;
+}
+
+.progress-label{
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    background-color: #fff;
+    color: #005ea4;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.progress-label.active{
+  background-color: #005ea4;
+  color: #fff;
+}
+
+.progress-empty{
+  height: 6px;
+  background-color: #fff;
+}
+
+.p-right{
+  margin-right: -8px;
+}
+.p-left{
+  margin-left: -8px;
+}
+
+.progress-active{
+  height: 6px;
+}
+
+.progress-active-left{
+  width:0%;
+  background-color: #005ea4;
+  transition:width 1s;
+}
+.progress-active-right{
+  width:0%;
+  background-color: #005ea4;
+  transition:width 1s;
+}
+
+/***********/
+
+.carousel-indicators{
+  bottom:10px;
+}
+
+.carousel-indicators li{
+  background-color: #cbcbcb;
+  border: solid 2px #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-indicators .active{
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-indicators .active{
+  background-color: #fe9507;
+}
+
+.menu-option{
+  padding:5px;
+}
+
+.comp-group{
+  background-color:#cbd5dc;
+  padding:10px;
+  margin-top: 10px;
+}
+
+
+.count-bubble{
+  width:40px;
+  height:40px;
+  background-color:#fff;
+  border-radius:25px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.50);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.50);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.50);
+}
+
+.btn-close{
+  -webkit-mask-image: url(../images/Delete.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: 100%;
+  background-color:$color-def-grey-selectfield-label;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.50);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.50);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.50);
+}
+
+
+.count-value{
+  font-size:18px;
+  color:$color-def-yellow;
+  font-weight:bold;
+}
+
+/*** date picker **/
+.unstyled::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+    color:rgba(204,204,204,0);
+}
+
+.dropdown-menu{
+  max-height: 150px !important;
+  overflow: scroll !important;
+}
+
+.no-top{
+  padding-top:0 !important;
+}
+
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) { 
+  .carousel-inner{
+    min-height:600px !important;
+  }
+}
+
+.indicatorWrapper{
+  
+}
+.overlayDiv{
+  position:absolute;
+  z-index:100;
+  width:100%;
+  height:20px;
+}
+
+

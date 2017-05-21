@@ -1,0 +1,69 @@
+
+  <header class="navbar-header full flex autospacer headerbackclr">
+    <div class="autospacer menu flex1 menuimg"></div>
+    <div class="autospacer title flex1">Fees Payment</div>
+    <div class="autospacer exit flex1 exitimg"></div>
+  </header>
+  <section class="full sectionbgrclr">
+      <div class="totalfee">
+        <span class="font-112">30,000</span>
+        <span class="font-36">AED</span>
+      </div>
+      <div class="flex addcc">
+        <div class="flex1 add">Add Credit Card</div>
+        <div class="flex1 exist">Existing</div>
+      </div>
+  </section>
+  <article>
+    <form role="form">
+      <div class="form-group flex">
+        <div class="flexauto">
+          <label for="txtCardName">Name on Card</label>
+          <input type="text" class="form-control cards" id="txtCardName" maxlength="50">
+        </div>
+        <div class="flex1 visa-box"><span id="cardType" class=""></span></div>
+      </div>
+
+      <div class="form-group">
+        <label for="txtCardNo">Card Number</label>
+        <input type="text" class="form-control cards" id="txtCardNo" maxlength="19" ng-keyup="txtCardNo_KeyUp($event)">
+      </div>
+
+      <div class="form-group flex">
+        <div class="flex2">
+          <label for="txtExpiryDate">Expiry Date</label>
+          <input type="text" class="form-control cards" id="txtExpiryDate" maxlength="7" placeholder="mm/yyyy">
+        </div>
+        <div class="flex1"><span class="infoimg-grey"></span></div>
+        <div class="flex2">
+          <label for="txtCVV">CVV</label>
+          <input type="password" class="form-control cards" id="txtCVV" maxlength="3">
+        </div>
+        <div class="flex1"><span class="infoimg-grey"></span></div>
+      </div>
+
+      <div class="form-group-chk font-18">
+        <div id="chkEasyPymPlan" class="checkbox">
+          <label id="lblEasyPymPlan"><input type="checkbox" value="">Convert to Easy Payment Plan over</label>
+        </div>
+        <div id="drpEasyPymPlan" class="dropup">
+          <div class=" dropdown-toggle" data-toggle="dropdown">
+            <span id="lblMonth">6</span>
+            <span class="glyphicon glyphicon-menu-down"></span>
+          </div>
+          <ul id="drpMonth" class="dropdown-menu dropdown-menu-right">
+            <li>3</li>
+            <li>6</li>
+            <li>9</li>
+          </ul>
+        </div>
+        <div id="lblMonths">months</div>
+      </div>
+    </form>
+  </article>
+  <button type="submit" class="center full paycta btnbgrclr">Pay</button>
+  <script>
+  $('#drpMonth li').on('click', function(){
+    $('#lblMonth').text($(this).html());
+  });
+  </script>

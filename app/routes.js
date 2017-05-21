@@ -88,27 +88,34 @@ export default function createRoutes(store) {
 
         importModules.catch(errorLoading);
       },
-    }, {
-      path: 'Demosenthil',
-      name: 'demosenthil',
+    },
+    //----start for vodafone dashboard here -----
+      {
+      path: '/vodafonedashboard',
+      name: 'vodafonedashboard',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
-          import('containers/Demosenthil/reducer'),
-          import('containers/Demosenthil/sagas'),
-          import('containers/Demosenthil'),
+          import('containers/VodafoneDashboard/reducer'),
+          import('containers/VodafoneDashboard/sagas'),
+          import('containers/VodafoneDashboard'),
         ]);
 
         const renderRoute = loadModule(cb);
 
         importModules.then(([reducer, sagas, component]) => {
-          injectReducer('demosenthil', reducer.default);
+          injectReducer('vodafonedashboard', reducer.default);
           injectSagas(sagas.default);
+
           renderRoute(component);
         });
 
         importModules.catch(errorLoading);
       },
-    }, {
+    }, 
+
+
+    //----end for vodafone dashboard----
+      {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {

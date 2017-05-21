@@ -15,8 +15,9 @@ const StyledTable = styled.table`
   font-family: ${font('primary')};
   border-collapse: collapse;
   width: 100%;
-  border: 1px solid ${palette('grayscale', 1, true)};
+  border: 1px;
   color: ${palette('grayscale', 0)};
+  border-bottom: 1px solid #fff;
 `
 
 const Table = ({ caption, head, foot, children, ...props }) => {

@@ -34,10 +34,18 @@ const makeSelectLogin = () => createSelector(
   (loginState) => loginState.get('mobileNumber')
 );
 
+const makeSelectUserData = () => createSelector(
+  selectLoginDomain(),
+
+  (loginState) => loginState && loginState.get('userData') ? loginState.get('userData') :''
+);
+
+
 export default makeSelectLogin;
 
 export {
   selectLoginDomain,
   makeSelectLogin,
-  makeSelectLocationState
+  makeSelectLocationState,
+  makeSelectUserData,
 };

@@ -30,12 +30,13 @@ const styles = css`
   font-size: ${fontSize};
   border: 0.0625em solid ${ifProp('transparent', 'currentcolor', 'transparent')};
   width:16em;
-  height: 4.5em;
+  height: 3.05em;
   justify-content: center;
   text-decoration: none;
   cursor: ${ifProp('disabled', 'default', 'pointer')};
   appearance: none;
   padding: 0 1em;
+  margin-bottom: 1.25em
   border-radius: 0.125em;
   box-sizing: border-box;
   pointer-events: ${ifProp('disabled', 'none', 'auto')};

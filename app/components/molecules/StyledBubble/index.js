@@ -13,7 +13,7 @@ import { font, palette } from 'styled-theme'
 import { ifProp } from 'styled-tools'
 
 
-const Style = css`
+const Style1 = css`
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     overflow: hidden;
@@ -21,7 +21,7 @@ const Style = css`
     position: relative;
     margin-bottom:20px;
 `
-const Style1 = css`
+const Style2 = css`
     background: #3D3D3D;
     border-radius: 35px;
     display: inline-block;
@@ -32,14 +32,14 @@ const Style1 = css`
     width: 100%;
 `
 
-const Style2 = css`
+const Style3 = css`
     background-color: #FFF;
     color: #333;
 `
 
-const BubbleStyleone = styled.div`${Style}`
-const BubbleStyletwo = styled.div`${Style1}`
-const BubbleStylethree = styled.div`${Style2}`
+const BubbleStyleone = styled.div`${Style1}`
+const BubbleStyletwo = styled.div`${Style2}`
+const BubbleStylethree = styled.div`${Style3}`
 
 
 const StyledBubble = ({ ...props }) => {
@@ -50,10 +50,12 @@ const StyledBubble = ({ ...props }) => {
   }else if (props.type === 'stylethree') {
     return <BubbleStylethree {...props} />
   }
+  return <BubbleStyleone {...props} />
 }
 
 
 StyledBubble.propTypes = {
+  type: PropTypes.string,
   palette: PropTypes.string,
   reverse: PropTypes.bool,
   opaque: PropTypes.bool,

@@ -1,0 +1,53 @@
+$font-18:9px;
+$font-20:10px;
+$font-24:12px;
+$font-28:14px;
+$font-32:16px;
+$font-36:18px;
+$font-40:20px;
+$font-48:24px;
+$font-56:28px;
+$font-60:30px;
+$font-112: 56px;
+$font-120:60px;
+
+.font-18{
+	font-size:$font-18;
+}
+.font-20{
+	font-size:$font-20;
+}
+.font-24{
+	font-size:$font-24;
+}
+.font-28{
+	font-size:$font-28;
+}
+.font-32{
+	font-size:$font-32;
+}
+.font-36{
+	font-size:$font-36;
+}
+.font-40{
+	font-size:$font-40;
+}
+.font-48{
+	font-size:$font-48;
+}
+.font-56{
+	font-size:$font-56;
+}
+.font-60{
+	font-size:$font-60;
+}
+.font-112{
+	font-size:$font-112;
+}
+.font-120{
+	font-size:$font-120;
+}
+
+.condensed{
+	font-stretch: condensed;
+}

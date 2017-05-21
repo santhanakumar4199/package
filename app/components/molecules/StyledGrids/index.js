@@ -43,7 +43,7 @@ const leftGrid = css`
     vertical-align: top;
     box-sizing: border-box;
     background-color: #ccc;
-    padding: 50px;
+    padding: 3.125em;
     width: 33.3333333333%;
     float:left;
 `
@@ -55,10 +55,10 @@ const leftGutter = css`
     vertical-align: top;
     box-sizing: border-box;
     background-color: #ccc;
-    padding: 50px;
+    padding: 0em;
     width: 33.3333333333%;
     float:left;
-    padding: 0 10px;
+    
 `
 
 const rightGrid = css`
@@ -68,7 +68,7 @@ const rightGrid = css`
     vertical-align: top;
     box-sizing: border-box;
     background-color: #afafaf;
-    padding: 50px;
+    padding: 3.125em;
     width: 66.6666666667%;
     float:right;
 `
@@ -79,19 +79,21 @@ const rightGutter = css`
     vertical-align: top;
     box-sizing: border-box;
     background-color: #afafaf;
-    padding: 50px;
+    padding: 3.125em;
     width: 66.6666666667%;
     float:right;
-    padding: 0 10px;
+
+   
 `
 
 const leftContent = css`
-    display: block;
+    letter-spacing: normal;
+    display: inline-block;
     bottom: 0;
     left: 0;
     overflow: hidden;
-    padding: 25px 30px;
-    position: absolute;
+    padding: 1.5625em 1.875em;
+    position: relative;
     right: 0;
     top: 0;
     background-color: #ccc;
@@ -100,11 +102,12 @@ const leftContent = css`
 
 `
 const rightContent = css`
+    letter-spacing: normal;
     display: block;
     bottom: 0;
     left: 0;
     overflow: hidden;
-    padding: 25px 30px;
+    padding: 1.5625em 1.875em;
     position: absolute;
     right: 0;
     top: 0;
@@ -142,7 +145,7 @@ const StyledGrids = ({ ...props }) => {
    if (props.gridType === 'leftcontent') {
     return <LeftContentGrid {...props} />
   }if (props.gridType === 'rightcontent') {
-    return <LeftContentGrid {...props} />
+    return <RightContentGrid {...props} />
   }
   if (props.gridType === 'leftgutter') {
     return <FirstGutter {...props} />

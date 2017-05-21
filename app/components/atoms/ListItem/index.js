@@ -6,6 +6,7 @@ import { ifProp } from 'styled-tools';
 
 const ListItem = styled.li`
   margin: 1em 0;
+  display: block;
 `;
 
 ListItem.propTypes = {

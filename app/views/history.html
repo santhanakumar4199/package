@@ -1,0 +1,21 @@
+<header class="navbar-header  headerbackclr full flex autospacer">
+    <div class="autospacer menu flex1 menuimg"></div>
+    <div class="autospacer title flex1">Payment History</div>
+    <div class="autospacer exit flex1 exitimg"></div>
+  </header>
+	<div class="pagetitle font-32 pad20">Recent Transactions</div>
+  <div class="full">
+	  <ul class="list-group transhis" >
+		  <li class="list-group-item full flex" ng-repeat="val in transDetails">
+		  	<div class="flex1">
+		    	<span class="flex1">{{val.trAcName}}</span>
+			</div>
+			<div class="flex1">
+			    <span class="flex1">{{val.amt}}</span>
+			</div>
+			<div>
+			    <span class="flex1">{{val.status}}</span>
+			</div>
+		  </li>
+		</ul>
+</div>

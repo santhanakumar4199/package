@@ -14,7 +14,7 @@ import messages from './messages';
 import {ReactDOM, findDOMNode } from 'react-dom';
 import { Button, ControlLabel, Form, FormControl, FormGroup, Panel,FieldGroup} from 'react-bootstrap';
 import {browserHistory} from 'react-router';
-import { getMobileNo,checkUser } from './actions';
+import { getMobileNo,checkUser,userdetails } from './actions';
 //import { checkUser } from '../App/actions';
 
 

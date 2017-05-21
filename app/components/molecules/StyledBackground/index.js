@@ -9,15 +9,16 @@ import React from 'react';
 
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import { font, palette } from 'styled-theme'
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { font, palette } from 'styled-theme';
+import Bubble from 'components';
 
 const BackgroundPreview = styled.div`
  	background-color: #f9f9f9;
     border: 1px solid #ddd;
     overflow: hidden;
-    padding: 3.125em;
+    
     position: relative;
     display: block;
 `
@@ -39,31 +40,33 @@ const BackgroundImage = styled.div`
     z-index: -1;
   
 `
+
 const BackgroundText = styled.div`
-      background-color: rgba(0, 0, 0, .4);
-    color: #fff;
-    max-width: 50%;
-    padding: 1.25em;
-`
+margin: auto;
+`;
+const bubblestyleone ={ "marginTop":"0","fontSize":"28px","marginBottom":"0","color":"#fff"};
+    const bubblestyletwo ={ "color":"#CCC","display":"block","marginBottom":"10px"};
 
-
-const StyledBackground = ({ BgImageURL, bgText, ...props }) => {
-  return (
-    <BackgroundPreview {...props}>
+const StyledBackground = ({ BgImageURL, bgText, BgType, children, ...props }) => {
+    return (
+      <BackgroundPreview {...props}>
       <BackgroundContainer>
-      	
-      	<BackgroundImage style={{backgroundImage: `url(${BgImageURL})`}} />
-      	<BackgroundText>{bgText}</BackgroundText>
+        
+        <BackgroundImage style={{backgroundImage: `url(${BgImageURL})`}} />
+       <BackgroundText>{children}</BackgroundText>
 
       </BackgroundContainer>
     </BackgroundPreview>
-  )
+    )
+  
+  
 }
 
 StyledBackground.propTypes = {
   cite: PropTypes.string,
   children: PropTypes.node,
   reverse: PropTypes.bool,
+  BgType: PropTypes.string.isRequired,
 }
 
 export default StyledBackground;

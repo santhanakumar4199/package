@@ -9,18 +9,24 @@ import React,{ PropTypes }  from 'react';
 
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { font, palette } from 'styled-theme'
 
 
-const Label = styled.label`
+const styles = css`
   font-family: ${font('primary')};
   color: ${palette('grayscale', 1)};
-  font-size: 1rem;
+  font-size: 2rem;
   line-height: 2em;
+  border: 0.075em solid #E60000;
+  
 `
 
+const Label = styled(({ children, palette, theme, ...props }) =>
+  React.createElement(`label`, props, children)
+		)`${styles}`
+
 Label.propTypes = {
-  reverse: PropTypes.bool,
+ palette: PropTypes.string, 
 }
 export default Label;

@@ -11,7 +11,8 @@ import { palette } from 'styled-theme'
 const backgroundColor = ({ filled }) => palette('grayscale', filled ? 1 : 0, true)
 
 const TableRow = styled.tr`
-  background-color: ${backgroundColor};
+  background-color: #ccc;;
+  border-bottom: 1px;
 `
 
 TableRow.propTypes = {

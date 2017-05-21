@@ -1,0 +1,45 @@
+$color-white: rgba(255,255,255,1);
+$color-def-green: #68baab;
+$color-black: rgba(0,0,0,1);
+$color-white-almost: rgba(255,255,255,0.8);
+$color-white-semi: rgba(255,255,255,0.5);
+$color-def-yellow: #ff9800;
+$color-def-yellow-dark-grad: #f47c3f;
+$color-def-yellow-dark: #f3703f;
+$color-def-yellow-light: #ffd9b8;
+$color-def-blue: #005ea4;
+$color-def-blue-button: #005ea4;
+$color-def-blue-disabled: #4385b6;
+$color-def-grey-text: #7c7c7c;
+$color-def-grey-text-light: #d2d0d0;
+$color-def-grey-back: #e2e2e2;
+$color-def-grey-indicator: #cbcbcb;
+$color-def-grey-selectfield-label: #b4b4b4;
+$color-def-green-light: #80CBC4;
+$color-def-violet: #6564a3;
+$color-def-violet-light :#9594bf;
+
+$col-def-grey: #ebebeb;
+$col-def-whitesmoke: #fafafa;
+$col-def-whitegrey: #f8f8f8;
+$col-def-semigrey: #b2b2b2;
+$col-def-darkgrey: #444;
+$col-def-moderateblue: #337ab7;
+
+
+
+.color-back-white{
+  background-color:$color-white;
+}
+
+.color-white{
+    color:$color-white;
+}
+
+.color-blue{
+	color:$color-def-blue !important;
+}
+
+body{
+	color:$color-def-grey-text;
+}

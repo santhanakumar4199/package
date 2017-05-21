@@ -18,19 +18,22 @@ export function* getuserCheck() {
   console.log("getuserCheck1s");
 
   const mobileNumber = yield select(makeSelectLogin());
-  const requestURL = `https://api.github.com/users/repos?type=all&sort=updated`;
+  //const requestURL = `http://www.mocky.io/v2/591c4467110000ec02824f76`;
+ const requestURL = ``;
   console.log("getuserCheck",mobileNumber);
 
   try {
     // Call our request helper (see 'utils/request')
     const repos = yield call(request, requestURL);
     yield put(reposLoaded(repos, mobileNumber));
+    console.log("repos",repos);
     browserHistory.push('/dashboard');
   } catch (err) {
     browserHistory.push('/dashboard');
     yield put(repoLoadingError(err));
   }
 }
+
 
 /**
  * Root saga manages watcher lifecycle
@@ -46,6 +49,7 @@ export function* userCheck() {
   yield take(LOCATION_CHANGE);
   yield cancel(watcher);
 }
+
 
 // Bootstrap sagas
 export default [

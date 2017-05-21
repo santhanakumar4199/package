@@ -18,8 +18,14 @@ const makeSelectDashboard = () => createSelector(
   selectDashboardDomain(),
   (substate) => substate ? substate.get('accState') :''
 );
+const makeSelectdailerVal = () => createSelector(
+  selectDashboardDomain(),
+  (substate) => substate ? substate.get('dailerVal') :''
+);
 
 export default makeSelectDashboard;
 export {
   selectDashboardDomain,
+  makeSelectdailerVal,
+  makeSelectUserData
 };

@@ -24,8 +24,6 @@ export const perpendicularOpposite = props => opposites[perpendicular(props)]
 
 export const perpendicularAxis = ({ position }) =>
     position === 'left' || position === 'right' ? 'Y' : 'X'
-const borderCollapse = ({ collapse, inherit }) =>
-      collapse ? 'collapse' : 'inherit'
 
 const styles = css`
   position: relative;
@@ -87,7 +85,6 @@ Heading.defaultProps = {
   align: 'end',
   fontWeight: 'normal',
   palette: 'grayscale',
-  borderCollapse: 'inherit',
-}
+  }
 
 export default Heading

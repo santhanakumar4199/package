@@ -1,0 +1,663 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+@import "partials/_flex";
+@import "partials/_layout";
+@import "partials/_color";
+@import "partials/_font";
+@import "partials/_components";
+@import "partials/_images";
+@import "partials/_rtlOverrides";
+@import "default.scss";
+
+
+header {
+    height: 38px;
+    /* background-color: $color-def-green; */
+    color: $color-white;
+}
+
+.list-group-item:nth-child(odd) {
+    background: #ebebeb;
+}
+.menu{
+  min-width: 36px;
+  max-width: 36px;
+  height: 36px;
+}
+.title {
+  text-align: center;
+  line-height: 36px;
+}
+.exit{
+  min-width: 36px;
+  max-width: 36px;
+  height: 36px;
+}
+section {
+    height: 135px;
+    /*background-color: $color-def-green;*/
+    color: $color-white;
+}
+section .autospacer.photo {
+    width: 75px;
+    height: 75px;
+    margin: 20px;
+}
+section .autospacer.photo span{
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+}
+section .details {
+  border-left: 1px solid #fff;
+  height: 115px;
+  padding: 0px 10px 0 15px; 
+  min-width: 205px;
+}
+section .details p {
+  margin: 0 0 4px 0;
+}
+section .progress {
+    height: 5px;
+    background-color: $color-def-green-light;
+    margin-bottom: 5px;
+}
+section .progress-bar {
+  background-color: $color-def-violet;
+}
+section .progresslbl {
+  font-size: $font-18;
+}
+section .progresslbl .paidlbl {
+  float: left;
+}
+
+section .progresslbl .outstandinglbl {
+  float: right;
+}
+.pagetitle {  
+  border-bottom: 1px solid #808080;
+  color: $color-def-green;
+}
+.siblinglist {
+  position: absolute;
+  top: 210px;
+  bottom: 40px;
+  overflow-y: auto;
+}
+
+/*start editing*/
+
+.siblinglist .list-group-item {
+  
+}
+
+.siblinglist .list-group-item .list{
+  position: relative;
+  color: $color-def-green;
+  padding-top: 10px;
+}
+
+.siblinglist .list-group-item:nth-child(odd) {
+  background: $col-def-grey;
+}
+
+.siblinglist .list-group-item:nth-child(even) {
+  background: $col-def-whitesmoke;
+}
+
+.siblinglist .photo {
+  min-width: 60px;
+  max-width: 60px;
+  height: 85px;
+}
+
+.siblinglist .photo span{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+}
+
+.siblinglist .details {
+  height: 85px;
+}
+
+.siblinglist .fee {
+  min-width: 100px;
+  max-width: 100px;
+  height: 85px;
+  position: relative;
+}
+
+.siblinglist .feedetails {
+  height: 90px;
+  transition: height 0.35s;
+  -webkit-transition: height 0.35s;
+  color: $color-def-green;
+  margin-left: 60px;
+}
+
+.siblinglist .feedetails .subfeename {
+  margin-left: 10px;
+}
+
+.siblinglist .feedetails .subfee {
+  text-align: right;
+  margin-right: 20px;
+}
+
+.siblinglist .details p {
+  margin: 0 0 5px 10px;
+}
+
+.siblinglist .fee p {
+  margin: 0;
+}
+
+/*.siblinglist .feestatus{
+  text-align: center;
+}*/
+
+.siblinglist .butAdd{
+  height: 40px;
+  /* background-color: $color-def-violet; */
+  color: $color-white;
+  border: none;
+  outline: none;
+}
+
+.siblinglist .butAdd:active{
+  outline: none;
+}
+
+.siblinglist .viewmore {
+  margin: 5px 0;
+  /*text-align: center;*/
+}
+
+.tab{
+  -webkit-box-direction: normal;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+
+  background-color: $col-def-whitegrey;
+  background-image: linear-gradient(0deg, $col-def-semigrey, $col-def-semigrey 50%, transparent 50%);
+  color: $col-def-darkgrey;
+
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+  height: 60px;
+  background-size: 0;
+}
+
+.tab>div{
+  padding: 0px 1px 0px 0px;
+}
+.tab button{  
+    padding: 0;
+    border: none;
+    /* background-color: $color-def-green; */
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
+    outline: none;
+    padding: 40px 0 8px 0;
+    color: $color-white;
+}
+
+.tab button:active {
+  background-color: $color-def-green-light;
+}
+
+                   /*/////////////////////////login css////////////////////////*/
+.form.login {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #68baab;
+}
+.article.login{
+  position: absolute;
+  width: 100%;
+  bottom: 60px;
+  background-color: rgba(255,255,255,.5);
+  color: rgba(255,255,255,.5);
+  padding: 5px 0 0 0;
+}
+.article.login label{
+  font-size: 9px;
+}
+.article.login button{
+  border: none;
+  outline: none;
+  height: 50px;
+  line-height: 50px;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
+    background-color: $color-def-violet;
+    color: #fff;
+}
+.article.login button:focus {
+  outline: 0;
+}
+.article.login button:active {
+  background-color: #B39DDB;
+  color: #fff;
+}
+.form-group {
+  padding: 0 10px 0 20px;
+  height: 50px;
+  margin-top: 15px;
+  border-bottom: 1px solid;
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+.footer.login {
+  position: absolute;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  bottom: 0;
+  color: #fff;
+  background-color: rgba(255,255,255,.5);
+}
+
+#username, #pwd {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+  box-shadow: none;
+    padding: 0;
+    height: auto;
+}
+
+.password.info{ 
+  min-width: 36px;
+  max-width: 36px;
+  height: 50px;
+}
+
+.password.info span {
+  display: inline-block;
+  margin-top: 12px;
+}
+.form-group.username {
+  border-bottom: 1px solid;
+  border-color: rgba(103,184,169,.3);
+  margin-bottom: 5px;
+}
+
+.form-group.password{
+  margin-bottom: 0;
+}
+.proceedbtn{
+    position: absolute;
+    bottom: 60px;
+    background-color: $color-def-violet;
+    color:$color-white;
+    outline: none;
+    border: none;
+    height: 40px;
+}
+.displayamount{
+  text-align:center;
+  margin-top:10px;
+}
+.full-circle {
+    background-color:transparent;
+    width: 100px;
+  height: 100px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+    border: 1px solid;
+    margin-left:10px
+}
+ .closeIcon{ 
+  top: -12px;
+  margin-left: 20px;
+  }
+  .addbtndis{
+    background-color: #A8A6F4 !important;
+  }
+.btngradlogout{
+ background: -moz-linear-gradient(90deg, rgba(101,100,163,1) 48%, rgba(101,100,163,1) 50%, rgba(91,90,148,1) 51%, rgba(91,90,148,1) 82%); /* ff3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(18%, rgba(91,90,148,1)), color-stop(49%, rgba(91,90,148,1)), color-stop(50%, rgba(101,100,163,1)), color-stop(52%, rgba(101,100,163,1))); /* safari4+,chrome */
+background: -webkit-linear-gradient(90deg, rgba(101,100,163,1) 48%, rgba(101,100,163,1) 50%, rgba(91,90,148,1) 51%, rgba(91,90,148,1) 82%); /* safari5.1+,chrome10+ */
+background: -o-linear-gradient(90deg, rgba(101,100,163,1) 48%, rgba(101,100,163,1) 50%, rgba(91,90,148,1) 51%, rgba(91,90,148,1) 82%); /* opera 11.10+ */
+background: -ms-linear-gradient(90deg, rgba(101,100,163,1) 48%, rgba(101,100,163,1) 50%, rgba(91,90,148,1) 51%, rgba(91,90,148,1) 82%); /* ie10+ */
+background: linear-gradient(0deg, rgba(101,100,163,1) 48%, rgba(101,100,163,1) 50%, rgba(91,90,148,1) 51%, rgba(91,90,148,1) 82%); /* w3c */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5B5A94', endColorstr='#6564a3',GradientType=0 ); /* ie6-9 */
+
+   height: 40px;
+    margin-top: 10px;
+    color:white;
+    outline:none;
+    border: none;
+    border-radius: 5px;
+}
+.square-box-violet{
+    position: relative;
+    width: 30px;
+    overflow: hidden;
+    background: #6564a3;
+    height: 30px;
+    outline: none;
+    border: none;
+}
+.square-box-green{
+    position: relative;
+    width:30px;
+    overflow: hidden;
+    background: #68baab;
+    height: 30px;
+    outline: none;
+    border: none;
+}
+.square-box:before{
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+.square-content{
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: white;
+}
+.square-content div {
+   display: table;
+   width: 100%;
+   height: 100%;
+}
+
+/*///////////////////////Cards ///////////////////////////////*/
+.totalfee {
+  text-align: center;
+}
+
+.addcc {
+  text-align: center;
+  line-height: 54px;
+}
+
+.addcc .add {
+  border-right: 1px solid;
+  border-color: rgba(255,255,255,.3);
+}
+
+.form-control.cards {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding: 0;
+  height: auto;
+}
+
+.paycta {
+  background-color: $color-def-violet;
+  color: $color-white;
+  line-height: 40px;
+  text-align: center;
+  bottom: 60px;
+  position: absolute;
+  outline: none;
+  border: none;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;
+}
+
+.paycta:active {
+  background-color: $color-def-violet-light;
+}
+
+#chkEasyPymPlan {
+  float: left;
+}
+
+#lblEasyPymPlan {
+  line-height: 20px; 
+}
+
+#drpEasyPymPlan {
+  float: left; 
+  margin: 14px 5px;
+}
+#drpMonth li { 
+  margin: 5px; 
+}
+
+#lblMonths {
+  float: left; 
+  margin: 14px 0px;
+}
+
+.form-group-chk {
+  padding: 0 10px 0 20px;
+  height: 50px;
+}
+
+.visa-box {
+  width: 40px;
+  height: 20px;
+  min-width: 40px;
+  max-width: 40px;
+  margin-top: 20px;
+}
+
+.visaimg , .masterimg{
+  display: inline-block;
+  width: 35px;
+  height: 20px;
+}
+
+.infoimg-grey {
+  display: inline-block;
+  margin-top: 25px;
+}
+
+                /*/////////////////////////old///////////////////////////*/
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+  height:100%;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+
+  /* Make the masthead heading the same height as the navigation */
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+
+  .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+}
+
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+
+  p + h4 {
+    margin-top: 28px;
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+/* Responsive: Below Desktops */
+@media screen and (max-width: 1024px) {
+  .form-container {
+    width: 100%;
+  }
+}
+
+.form-container{
+  max-width:1024px;
+}
+.form-background{
+  background-color:#acacac;
+} 
+
+
+.form-header{
+  background-color:#ffffff;
+}
+
+
+.form-header-height{
+  min-height:120px;
+}
+
+.tab-height{
+  min-height:648px;
+}
+
+.carousel-height{
+  min-height:400px;
+}
+
+.form-header-title{
+  font-family:font-mashreq;
+
+}
+
+.form-header-logo{
+  background-image:url(../images/mashreq-logo.png);
+  background-repeat:no-repeat;
+  background-size:270px 44px;
+  height:44px;
+  width:270px;
+  background-position:center left;
+  height:120px;
+} 
+
+.image-lady{
+  background-image:url(../images/lady.png);
+  height:196px;
+  width:164px;
+  background-size:164px 196px;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+  
+.font-mashreq{
+  font-family:Font-Mashreq;
+}
+
+
+.font-mashreq-light{
+  font-family:Font-Mashreq-Light;
+}
+
+.font-mashreq-bold{
+  font-family:Font-Mashreq-Bold;
+}
+
+@font-face {
+    font-family: Font-Mashreq;
+    src: url(../fonts/CorisandeRegular.ttf);
+}
+@font-face {
+    font-family: Font-Mashreq-Light;
+    src: url(../fonts/CorisandeLight.ttf);
+}
+@font-face {
+    font-family: Font-Mashreq-Bold;
+    src: url(../fonts/CorisandeBold.ttf);
+}
+
+h3{
+  font-size:$font-48;
+}
+h4{
+  font-size:$font-36;
+}
+
+
+.copyright-container{
+  height:40px;
+}
+
+
+

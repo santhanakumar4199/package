@@ -44,9 +44,9 @@ const breadSection = css`
     background-color: #F4F4F4;
     color: #333;
     background: inherit;
-    border-bottom: 1px solid #CCC;
-    border-top: 1px solid #CCC;
-    padding: 18px 0;
+    border-bottom: 0em;
+    border-top: 0;
+    margin-top: 0.0625em;
     text-align: left;
     display: block;
     box-sizing: border-box;

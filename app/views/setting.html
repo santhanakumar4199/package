@@ -1,0 +1,45 @@
+<header class="navbar-header headerbackclr full flex autospacer">
+    <div class="autospacer menu flex1 menuimg"></div>
+    <div class="autospacer title flex1">Settings</div>
+    <div class="autospacer exit flex1 exitimg"></div>
+  </header>
+	<div class="pagetitle font-32 pad20">Menu Settings</div>
+  <div class="full">
+  	<button type="submit" class="full pad0 btngradlogout" data-toggle="modal" data-target="#myModal">Theme</button>
+	 <button type="submit" class="full pad0 btngradlogout" ng-click="logout()">Logout</button>
+</div>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h5 class="modal-title">Select your theme</h5>
+        </div>
+        <div class="modal-body">
+        <div class="flex">
+        <button type="button" class="square-box-violet" onclick ="ThemeCtrl.toggleTheme()"></button></br>
+        <button type="button" class="square-box-green" onclick ="ThemeCtrl.toggleTheme()"></button>
+		</div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p ng-click="theme()">Green</p>
+          <p>Violet</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

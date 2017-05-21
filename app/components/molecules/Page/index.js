@@ -10,10 +10,12 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
   padding: 160px 0;
-  border: 1px dashed #e60000;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  border: 1px solid #e60000;
+  padding-bottom: 10.075em;
+  padding-left: 0.075em;
+  padding-right: 0.075em;
+  padding-top: 0em;
+  background-color: #ebebeb;
 `
 const Content = styled.section`
   width: 100%;

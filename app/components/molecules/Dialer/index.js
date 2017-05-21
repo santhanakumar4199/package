@@ -9,58 +9,57 @@ import React from 'react';
 
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
-import styled, { css } from 'styled-components';
-import {Block} from 'components';
+import styled, { css,keyframes } from 'styled-components';
+import {Block,Input} from 'components';
+import CountUp from 'react-countup';
 
-const MediaSvg = styled.svg`
+export class Dialer extends React.PureComponent {
+//const Dialer = ({val,...props}) => {
+constructor(props) {
+    super(props);
+  }
+  
+shouldComponentUpdate(nextProps, nextState){
+    console.log("shouldComponentUpdateDialer",nextProps, nextState,this.props);
+  if(this.props.val != nextProps.val){
+    return true;
+  }
+  return false;
+}  
 
-`;
+render() {
+  console.log("renderDialer",this.props.val);	
+  const transition = keyframes`
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }`;
 
-const MediaCircle = styled.circle`
-    &.dial__circle {
-  fill: transparent;
-  stroke-dasharray: 0,20000%;
-  stroke-linecap: round;
-  stroke-width: 15px;
-  -webkit-transition: stroke-dasharray .4s ease-in-out;
-  transition: stroke-dasharray .4s ease-in-out;
-}
 
-&.dial__circle-track {
+  const MediaSvg = styled.svg`
+
+  `;
+
+  const MediaCircle = styled.circle`
+      &.dial__circle {
     fill: transparent;
-    stroke: #434343;
-    stroke-width: 8px;
-}
-`;
+    stroke-dasharray: 0,20000%;
+    stroke-linecap: round;
+    stroke-width: 15px;
+  }
 
-const Dialer = ({...props}) => {
+  &.dial__circle-track {
+      fill: transparent;
+      stroke: #434343;
+      stroke-width: 8px;
+  }
+  `;
+
 
 const MediaBlock = styled(Block)`
-   &.cont {
-  display: block;
-  height: 200px;
-  width: 200px;
-  margin: 2em auto;
-  box-shadow: 0 0 1em black;
-  border-radius: 100%;
-  position: relative;
-}
-&.cont:after {
-  position: absolute;
-  display: block;
-  height: 160px;
-  width: 160px;
-  left: 50%;
-  top: 50%;
-  box-shadow: inset 0 0 1em black;
 
-  margin-top: -80px;
-  margin-left: -80px;
-  border-radius: 100%;
-  line-height: 160px;
-  font-size: 2em;
-  text-shadow: 0 0 0.5em black;
-}
 &.data-dials__content {
 		display: none;
 	}
@@ -74,8 +73,8 @@ const MediaBlock = styled(Block)`
 	vertical-align: top;
 }
 &.grid__item--gutter {
+	width:33.3333%;
 	padding: 0 10px;
-  margin-left:11%;
 }
 
 &.dial {
@@ -100,7 +99,7 @@ const MediaBlock = styled(Block)`
 	border-radius: 50%;
 	z-index: 3;
 	left: 50%;
-	margin-left: -3px;
+	margin-left: 7px;
 	margin-top: -1px;
 	-webkit-animation: fade-in-extended 1.5s;
 	        animation: fade-in-extended 1.5s;
@@ -168,10 +167,10 @@ const Mediaspan = styled.span`
 position: absolute;
 -webkit-transform-origin: 0 100%;
     -ms-transform-origin: 0 100%;
-        transform-origin: 0 101%;
-left: 54%;
+        transform-origin: 0 100%;
+left: 55%;
 padding-left: 50%;
-padding-top: 51%;
+padding-top: 50%;
 z-index: 1;
 -webkit-transition: -webkit-transform .4s ease-in-out;
         transition: transform .4s ease-in-out;
@@ -184,7 +183,7 @@ border-right-color: #FFFFFF;
 height: 0;
 width: 0;
 position: absolute;
-left: -10px;
+left: 0;
 top: -1px;
 margin-left: -6px;
 -webkit-animation: fade-in-extended 1.5s forwards;
@@ -193,34 +192,58 @@ margin-left: -6px;
 
 `;
 
+const MediaCount = styled(CountUp)`
+.dial__value {
+  font-size: 74px;
+  font-family: "VodafoneRegularBold";
+}
+`;
 
-const divback = {"stroke-dasharray": "81.8125%, 20000%"};
-const trans264 = {"transform": "rotate(-264deg)"};
-  return (
+const val = this.props.val ? this.props.val :360;
+const maxDegree = 360;
+const maxDash = 308;
+const diff = 360-308;
+const trans = maxDegree / val;
+const totdiff = diff / trans;
+const dashValue = val - totdiff;
+const degr = val - maxDegree;
+console.log("valvalval",val);
+const dataVal = val != 360 ? 16 * val /360 : 16;
 
-<MediaBlock id="dial-data" className="data-dials__content data-dials__content--active grid__item grid__item--gutter grid__item--sm-1/1 grid__item--1/3">
-<MediaBlock className="dial data-dials__dial dial--body dial--finn dial--full dial--dashboard" data-js="_dial" data-value="4.25" data-max-value="16" data-show-segmentations="false" data-max-degrees="360" data-max-percentage="308" data-start-value="16">
-<MediaBlock className="dial__value-wrapper">
-  <MediaBlock className="dial__value-label">UK data</MediaBlock>
 
-          <MediaBlock className="js-dial-value dial__value">4.25</MediaBlock>
+var divback = {"transition-duration":"5s","stroke-dasharray": dashValue +"%, 20000%"};
+const trans264 = {"transform": "rotate("+ degr +"deg)"};
+// const da = 4.26
+// setTimeout(function(){
+// 	divback = {"transition-duration":"5s","stroke-dasharray": dashValue +"%, 20000%"};
+// },5999);
 
-          <span>of 16<abbr title="Gigabyte">GB</abbr> left</span>
-      </MediaBlock>
+return (
+	<MediaBlock id="dial-data" className="data-dials__content data-dials__content--active grid__item grid__item--gutter grid__item--sm-1/1 grid__item--1/3">
+	<MediaBlock className="dial data-dials__dial dial--body dial--finn dial--full dial--dashboard" data-js="_dial" data-value="4.25" data-max-value="16" data-show-segmentations="false" data-max-degrees="250" data-max-percentage="308" data-start-value="0">
+	<MediaBlock className="dial__value-wrapper">
+	  <MediaBlock className="dial__value-label">UK data</MediaBlock>
 
-      <Mediaspan className="dial__indicator" style={trans264}></Mediaspan>
-  <MediaSvg className="dial__svg" id="svg" width="200" height="200" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	  <MediaCount className="custom-count dial__value" start={16}
+	    end={dataVal} duration={2} useEasing={true} separator=" " decimals="2" prefix="" suffix=" " />
 
-	  <MediaCircle  className="dial__circle-track"  cx="250" cy="250" r="245" transform="rotate(-95.8 250 250)" >
-	  </MediaCircle>
+	          <span>of 16<abbr title="Gigabyte">GB</abbr> left</span>
+	      </MediaBlock>
 
-	  <MediaCircle id="bar" className="dial__circle" cx="250" cy="250" r="245" style={divback} transform="rotate(-95.8 250 250)" >
-	  </MediaCircle>
+	      <Mediaspan className="dial__indicator" style={trans264}></Mediaspan>
+	  <MediaSvg className="dial__svg" id="svg" width="200" height="200" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg">
 
-	</MediaSvg>
-  </MediaBlock>
-</MediaBlock>
+		  <MediaCircle  className="dial__circle-track"   cx="250" cy="250" r="245" transform="rotate(-89.8 250 250)" >
+		  </MediaCircle>
+
+		  <MediaCircle id="bar" className="dial__circle"  cx="250" cy="250" r="245" style={divback} transform="rotate(-89.8 250 250)" >
+		  </MediaCircle>
+
+		</MediaSvg>
+	  </MediaBlock>
+	</MediaBlock>
   )
+}
 }
 
 Dialer.propTypes = {
